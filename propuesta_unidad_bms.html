@@ -3,26 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Propuesta Brand Mind Studio · Asesoría Unidad</title>
+<title>Propuesta AbsolutIA · Asesoría Unidad</title>
 <style>
   :root {
     --negro: #0a0a0a;
     --blanco: #ffffff;
     --gris: #f4f4f2;
     --gris-medio: #e0e0dc;
-    --acento: #1a1a1a;
     --amarillo: #f5c518;
     --texto: #222222;
     --muted: #666666;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Georgia', serif;
-    background: var(--blanco);
-    color: var(--texto);
-    line-height: 1.7;
-  }
-  /* HEADER */
+  body { font-family: 'Georgia', serif; background: var(--blanco); color: var(--texto); line-height: 1.7; }
+
   .header {
     background: var(--negro);
     padding: 28px 48px;
@@ -33,14 +27,12 @@
   .header .logo {
     color: var(--blanco);
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
   }
-  .header .logo span {
-    color: var(--amarillo);
-  }
+  .header .logo span { color: var(--amarillo); }
   .header .meta {
     color: #888;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -49,7 +41,7 @@
     text-transform: uppercase;
     text-align: right;
   }
-  /* HERO */
+
   .hero {
     background: var(--negro);
     padding: 80px 48px 72px;
@@ -65,37 +57,31 @@
     margin-bottom: 24px;
   }
   .hero h1 {
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(36px, 5vw, 60px);
     font-weight: 400;
     color: var(--blanco);
     line-height: 1.1;
     max-width: 800px;
   }
-  .hero h1 em {
+  .hero h1 em { font-style: italic; color: var(--amarillo); }
+  .hero .saludo {
+    margin-top: 32px;
+    color: #ccc;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    max-width: 620px;
+    line-height: 1.7;
     font-style: italic;
-    color: var(--amarillo);
   }
-  .hero .subtitulo {
-    margin-top: 28px;
-    color: #aaa;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 16px;
-    max-width: 560px;
-    line-height: 1.6;
-  }
-  /* CONTAINER */
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 48px;
-  }
-  /* SECCIÓN */
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 48px; }
+
   .seccion {
-    padding: 72px 0;
+    padding: 64px 0;
     border-bottom: 1px solid var(--gris-medio);
   }
   .seccion:last-child { border-bottom: none; }
-  .seccion-num {
+  .seccion-label {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 11px;
     font-weight: 700;
@@ -105,194 +91,94 @@
     margin-bottom: 20px;
   }
   .seccion h2 {
-    font-size: clamp(24px, 3vw, 36px);
+    font-size: clamp(22px, 3vw, 32px);
     font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 28px;
+    line-height: 1.25;
+    margin-bottom: 24px;
     max-width: 680px;
   }
-  .seccion p {
+  .seccion > p {
     font-size: 17px;
     color: #444;
     max-width: 680px;
-    margin-bottom: 16px;
+    margin-bottom: 40px;
+    line-height: 1.75;
   }
-  .seccion p:last-child { margin-bottom: 0; }
-  /* DIAGNÓSTICO CALLOUT */
-  .callout {
-    background: var(--gris);
-    border-left: 4px solid var(--negro);
-    padding: 28px 32px;
-    margin: 32px 0;
-    max-width: 680px;
-  }
-  .callout p {
-    font-size: 16px;
-    color: var(--texto);
-    font-style: italic;
-  }
-  /* SERVICIOS GRID */
-  .servicios {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 40px;
-    background: var(--gris-medio);
-  }
-  .servicio-card {
+
+  .bloques { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gris-medio); }
+  .bloque {
     background: var(--blanco);
-    padding: 36px 32px;
+    padding: 40px 36px;
   }
-  .servicio-card .num {
+  .bloque .bloque-label {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
-  .servicio-card h3 {
+  .bloque h3 {
     font-size: 20px;
     font-weight: 400;
-    margin-bottom: 14px;
+    margin-bottom: 24px;
     line-height: 1.3;
   }
-  .servicio-card p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.65;
-    margin: 0;
-    max-width: none;
-  }
-  .servicio-card .icono {
-    font-size: 28px;
-    margin-bottom: 16px;
-    display: block;
-  }
-  /* PRECIO */
-  .precio-bloque {
-    background: var(--negro);
-    color: var(--blanco);
-    padding: 52px 48px;
-    margin: 48px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-  }
-  .precio-bloque .precio-info h3 {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--amarillo);
-    margin-bottom: 12px;
-  }
-  .precio-bloque .precio-info .nombre {
-    font-size: 28px;
-    font-weight: 400;
-    margin-bottom: 8px;
-  }
-  .precio-bloque .precio-info p {
-    font-size: 14px;
-    color: #999;
-    max-width: 400px;
-    line-height: 1.6;
-    margin: 0;
-  }
-  .precio-bloque .precio-num {
-    text-align: right;
-    flex-shrink: 0;
-  }
-  .precio-bloque .precio-num .cantidad {
-    font-size: 52px;
-    font-weight: 300;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1;
-    color: var(--amarillo);
-  }
-  .precio-bloque .precio-num .periodo {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    color: #888;
-    margin-top: 6px;
-    letter-spacing: 1px;
-  }
-  .precio-bloque .precio-num .mant {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 13px;
-    color: #aaa;
-    margin-top: 8px;
-  }
-  /* TIMELINE */
-  .timeline {
-    margin-top: 40px;
-    max-width: 680px;
-  }
-  .timeline-item {
-    display: flex;
-    gap: 28px;
-    padding-bottom: 36px;
+  .bloque ul { list-style: none; padding: 0; }
+  .bloque ul li {
+    font-size: 15px;
+    color: #444;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gris-medio);
+    line-height: 1.55;
+    padding-left: 18px;
     position: relative;
   }
-  .timeline-item::before {
-    content: '';
+  .bloque ul li:last-child { border-bottom: none; }
+  .bloque ul li::before {
+    content: '→';
     position: absolute;
-    left: 20px;
-    top: 44px;
-    bottom: 0;
-    width: 1px;
-    background: var(--gris-medio);
+    left: 0;
+    color: var(--amarillo);
+    font-style: normal;
   }
-  .timeline-item:last-child::before { display: none; }
-  .timeline-dot {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+
+  .callout {
     background: var(--negro);
     color: var(--blanco);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    padding: 40px 44px;
+    margin-top: 56px;
   }
-  .timeline-content h4 {
-    font-size: 17px;
-    font-weight: 400;
-    margin-bottom: 6px;
-    padding-top: 8px;
+  .callout p {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.7;
+    color: #ddd;
+    max-width: 680px;
   }
-  .timeline-content p {
-    font-size: 14px;
-    color: var(--muted);
-    margin: 0;
-    max-width: none;
-  }
-  /* CTA */
+  .callout p strong { color: var(--amarillo); font-style: normal; font-weight: 400; }
+
   .cta-bloque {
     background: var(--amarillo);
     padding: 64px 48px;
     text-align: center;
   }
   .cta-bloque h2 {
-    font-size: clamp(28px, 4vw, 46px);
+    font-size: clamp(26px, 4vw, 42px);
     font-weight: 400;
     color: var(--negro);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     line-height: 1.2;
   }
   .cta-bloque p {
     font-size: 17px;
     color: #333;
     margin-bottom: 36px;
-    max-width: 560px;
+    max-width: 520px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.65;
   }
   .cta-btn {
     display: inline-block;
@@ -303,11 +189,11 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 18px 40px;
+    padding: 18px 44px;
     text-decoration: none;
   }
   .cta-btn:hover { background: #333; }
-  /* FOOTER */
+
   .footer {
     background: var(--negro);
     padding: 36px 48px;
@@ -318,20 +204,16 @@
   .footer .logo {
     color: var(--blanco);
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
   .footer .logo span { color: var(--amarillo); }
-  .footer p {
-    color: #666;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-  }
+  .footer p { color: #666; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; }
   .footer a { color: #888; text-decoration: none; }
   .footer a:hover { color: var(--amarillo); }
-  /* WATERMARK */
+
   .powered {
     text-align: center;
     padding: 12px;
@@ -343,144 +225,74 @@
     text-transform: uppercase;
   }
   .powered span { color: #666; }
-  /* RESPONSIVE */
-  @media (max-width: 700px) {
+
+  @media (max-width: 680px) {
     .header, .hero, .container, .footer, .cta-bloque { padding-left: 24px; padding-right: 24px; }
-    .servicios { grid-template-columns: 1fr; }
-    .precio-bloque { flex-direction: column; text-align: left; padding: 36px 24px; }
-    .precio-bloque .precio-num { text-align: left; }
+    .bloques { grid-template-columns: 1fr; }
+    .callout { padding: 32px 24px; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <div class="logo">Brand Mind <span>Studio</span></div>
+  <div class="logo">Absolut<span>IA</span></div>
   <div class="meta">Propuesta confidencial<br>Mayo 2026</div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <div class="tag">Propuesta · Asesoría Unidad · Ibiza</div>
   <h1>53 años de confianza.<br><em>Ahora, también a las 3 de la madrugada.</em></h1>
-  <p class="subtitulo">Sistema de automatización e inteligencia artificial diseñado específicamente para la operativa de Asesoría Unidad.</p>
+  <p class="saludo">Pablo, Joan — hemos preparado esto pensando en Unidad específicamente. No es una presentación genérica de inteligencia artificial. Es un análisis de lo que vuestra asesoría puede hacer mejor, y de las puertas que hoy no están abiertas.</p>
 </div>
 
-<!-- DIAGNÓSTICO -->
 <div class="container">
+
   <div class="seccion">
-    <div class="seccion-num">01 · El diagnóstico</div>
-    <h2>Lo que ve un cliente potencial cuando busca una asesoría en Ibiza en 2026</h2>
-    <p>Unidad tiene el activo más difícil de replicar en este mercado: 53 años de presencia, reputación consolidada, y un equipo que ya es referencia. Eso no está en discusión.</p>
+    <div class="seccion-label">El punto de partida</div>
+    <h2>Unidad tiene algo que no se puede comprar: 53 años de reputación en Ibiza</h2>
+    <p>Lo que sí se puede mejorar es la capacidad de respuesta, la eficiencia interna y la disponibilidad hacia el cliente. La inteligencia artificial no reemplaza al asesor — amplifica su alcance sin necesidad de contratar más personal ni ampliar el horario.</p>
+
+    <div class="bloques">
+      <div class="bloque">
+        <div class="bloque-label">Bloque 01</div>
+        <h3>Mejoras operativas — lo que ya hacéis, hecho mejor</h3>
+        <ul>
+          <li>Atención al cliente fuera de horario: las consultas urgentes reciben respuesta inmediata aunque sea sábado por la noche</li>
+          <li>Clasificación automática de nuevas consultas por departamento, sin que nadie tenga que redirigirlas manualmente</li>
+          <li>Recordatorios automáticos de vencimientos fiscales y documentación pendiente, para cada cliente, sin trabajo manual del equipo</li>
+          <li>Onboarding de nuevos clientes guiado: el sistema recoge datos, documentación y contexto antes de la primera reunión con el asesor</li>
+          <li>Seguimiento de expedientes visible para el equipo sin depender de llamadas internas ni emails</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <div class="bloque-label">Bloque 02</div>
+        <h3>Nuevas posibilidades — lo que hoy no está disponible</h3>
+        <ul>
+          <li>Captación activa de nuevos clientes: el sistema cualifica consultas entrantes y convierte visitas web en citas reales, de forma autónoma</li>
+          <li>Servicio 24/7 sin ampliar plantilla: Unidad disponible cuando el cliente lo necesita, no solo en horario de oficina</li>
+          <li>Comunicaciones normativas personalizadas: cuando hay un cambio relevante (fiscal, laboral, Baleares), el sistema identifica qué clientes se ven afectados y genera el borrador de aviso</li>
+          <li>Atención multilingüe para el cliente extranjero de Ibiza, sin necesidad de un perfil específico en el equipo</li>
+          <li>Expansión de capacidad sin expansión de costes fijos: más clientes atendidos con la misma estructura</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="callout">
-      <p>El problema es que la web no refleja ese nivel. Blog sin actividad desde 2024, formulario de contacto que llega a una bandeja de entrada humana, y cero respuesta fuera del horario L-J 8:30-15:00. El cliente moderno decide en 3 minutos y no espera al lunes.</p>
-    </div>
-    <p>Mientras tanto, plataformas digitales de asesoría para autónomos y PYMEs están entrando en el mercado español con atención 24/7, onboarding automatizado y precios agresivos. El diferencial de Unidad es la profundidad y la confianza personal — pero ese diferencial necesita estar disponible cuando el cliente lo busca.</p>
-  </div>
-
-  <!-- SOLUCIÓN -->
-  <div class="seccion">
-    <div class="seccion-num">02 · La solución</div>
-    <h2>Ecosistema IA para Asesoría Unidad</h2>
-    <p>Cuatro módulos integrados que cubren los procesos con mayor carga de tiempo y mayor impacto en la captación de nuevos clientes:</p>
-
-    <div class="servicios">
-      <div class="servicio-card">
-        <span class="icono">🤖</span>
-        <div class="num">Módulo 01</div>
-        <h3>Asistente IA 24/7</h3>
-        <p>Responde consultas frecuentes sobre plazos fiscales, documentación requerida, modelos tributarios y servicios disponibles. Fuera de horario, en español, inglés y alemán. Filtra y cualifica antes de que llegue al equipo.</p>
-      </div>
-      <div class="servicio-card">
-        <span class="icono">📅</span>
-        <div class="num">Módulo 02</div>
-        <h3>Citas inteligentes</h3>
-        <p>Formulario de captación que clasifica automáticamente por departamento (fiscal, laboral, jurídico, patrimonial) y agenda directamente. Sin intermediarios, sin llamadas de coordinación.</p>
-      </div>
-      <div class="servicio-card">
-        <span class="icono">📋</span>
-        <div class="num">Módulo 03</div>
-        <h3>Panel de expedientes</h3>
-        <p>Dashboard interno por asesor: estado de expedientes activos, alertas de vencimientos, documentación pendiente. Integrado con el Portal Cliente existente. Reduce el tiempo de seguimiento manual.</p>
-      </div>
-      <div class="servicio-card">
-        <span class="icono">📡</span>
-        <div class="num">Módulo 04</div>
-        <h3>Alertas normativas</h3>
-        <p>El sistema detecta cambios regulatorios relevantes (Régimen Especial Baleares, nuevos modelos AEAT, cambios laborales) y genera borradores de comunicación para los clientes afectados. El asesor revisa y aprueba.</p>
-      </div>
+      <p>El objetivo no es que Unidad parezca más tecnológica. Es que <strong>Pablo, Joan y el equipo dediquen su tiempo a lo que realmente aporta valor</strong> — el criterio, la confianza y el conocimiento que llevan décadas construyendo — y que el resto funcione solo.</p>
     </div>
   </div>
 
-  <!-- PRECIO -->
-  <div class="seccion">
-    <div class="seccion-num">03 · La inversión</div>
-    <h2>Precio cerrado, sin sorpresas</h2>
-    <p>Una implementación única que incluye diseño, desarrollo, configuración de la IA, formación del equipo y puesta en producción.</p>
-
-    <div class="precio-bloque">
-      <div class="precio-info">
-        <h3>Ecosistema IA</h3>
-        <div class="nombre">Implementación completa</div>
-        <p>Los cuatro módulos configurados para la operativa específica de Unidad. Entrega en 2-3 semanas desde el kick-off. Incluye formación para el equipo y 30 días de soporte post-lanzamiento.</p>
-      </div>
-      <div class="precio-num">
-        <div class="cantidad">1.950€</div>
-        <div class="periodo">pago único · sin IVA</div>
-        <div class="mant">+ 149€/mes mantenimiento</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROCESO -->
-  <div class="seccion">
-    <div class="seccion-num">04 · El proceso</div>
-    <h2>De la reunión inicial a producción en 3 semanas</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot">1</div>
-        <div class="timeline-content">
-          <h4>Reunión de diagnóstico — 45 min</h4>
-          <p>Mapeamos los 3 procesos que más tiempo consumen al equipo. Definimos prioridades y flujos de trabajo reales.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">2</div>
-        <div class="timeline-content">
-          <h4>Demo en vivo — Semana 1</h4>
-          <p>Prototipo funcional con los datos y la identidad de Unidad. El equipo puede probar antes de confirmar.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">3</div>
-        <div class="timeline-content">
-          <h4>Desarrollo e integración — Semana 2</h4>
-          <p>Construcción de los módulos, configuración de la IA con el conocimiento específico de la asesoría, integración con portales existentes.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">4</div>
-        <div class="timeline-content">
-          <h4>Formación y lanzamiento — Semana 3</h4>
-          <p>Sesión de formación para el equipo (1h). Activación en producción. El sistema empieza a trabajar desde el primer día.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!-- CTA -->
 <div class="cta-bloque">
-  <h2>¿Empezamos con la reunión?</h2>
-  <p>45 minutos con Joan para mapear los procesos. Sin compromiso. Si al final no encaja, al menos tenéis el diagnóstico gratis.</p>
-  <a href="mailto:info@chainsofbrains.com?subject=Propuesta Unidad - Reunión inicial" class="cta-btn">Escribir a Fernando</a>
+  <h2>Pablo, Joan — ¿lo vemos juntos?</h2>
+  <p>45 minutos para revisar qué encaja con la realidad de Unidad. Sin compromiso, sin tecnicismos. Si no tiene sentido para vosotros, os quedáis con el diagnóstico.</p>
+  <a href="mailto:info@chainsofbrains.com?subject=Propuesta Unidad - Reunión" class="cta-btn">Escribir a Fernando</a>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="logo">Brand Mind <span>Studio</span></div>
+  <div class="logo">Absolut<span>IA</span></div>
   <p><a href="mailto:info@chainsofbrains.com">info@chainsofbrains.com</a></p>
 </footer>
 
